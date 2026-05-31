@@ -1,0 +1,12 @@
+<<<<<<< SEARCH
+// Initialize on service worker startup
+init();
+
+chrome.tabs.onActivated.addListener(async (activeInfo) => {
+=======
+// Initialize only when the extension is installed or Chrome starts up
+chrome.runtime.onInstalled.addListener(init);
+chrome.runtime.onStartup.addListener(init);
+
+chrome.tabs.onActivated.addListener(async (activeInfo) => {
+>>>>>>> REPLACE
