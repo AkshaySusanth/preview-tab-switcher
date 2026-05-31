@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: transparent; /* or matching arc's semi-transparent overlay if we injected, but popup has its own window */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden; /* hide scrollbars */
+  color: #fff;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2c2c2c;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 700px;
+  height: 400px;
+}
+
+#tab-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.tab-card {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 120px;
+  background-color: #3f3f3f;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: transform 0.1s, box-shadow 0.1s, border 0.1s;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.tab-card.selected {
+  border: 2px solid #007aff; /* Mac blue highlight */
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.5);
+  background-color: #4a4a4a;
+}
+
+.tab-preview {
+  flex-grow: 1;
+  background-size: cover;
+  background-position: center;
+  background-color: #555;
+}
+
+.tab-info {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background-color: rgba(0,0,0,0.2);
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.tab-favicon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.tab-title {
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
